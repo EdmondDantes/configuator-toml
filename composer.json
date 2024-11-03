@@ -9,7 +9,7 @@
             "package": {
                 "name": "configurator",
                 "bootloaders": [
-                    "IfCastle\\Configurator\\Toml\\ConfigApplication"
+                    "IfCastle\\Configurator\\Toml\\Configurator"
                 ]
             }
         }
@@ -25,10 +25,11 @@
         }
     },
     "require": {
-        "ifcastle/di": "^0.6.7",
-        "ifcastle/os-utilities": "^0.5.0",
-        "ifcastle/service-manager": "^0.6.0",
-        "ifcastle/application": "^0.7.5",
+        "php": "^8.3",
+        "ifcastle/di": "^0.7",
+        "ifcastle/os-utilities": "^0.5",
+        "ifcastle/service-manager": "^0.6",
+        "ifcastle/application": "^0.7",
         "devium/toml": "^1.0"
     },
     "require-dev": {
