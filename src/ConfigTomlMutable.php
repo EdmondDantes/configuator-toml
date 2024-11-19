@@ -157,7 +157,7 @@ class ConfigTomlMutable extends ConfigToml implements ConfigMutableInterface
     public function reset(): static
     {
         $this->throwReadOnly();
-        $this->load();
+        $this->resetLoadedData();
 
         $this->wasModified          = true;
 

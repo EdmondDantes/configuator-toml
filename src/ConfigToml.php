@@ -155,4 +155,9 @@ class ConfigToml implements ConfigInterface
 
         return $result;
     }
+
+    protected function resetLoadedData(): void
+    {
+        $this->isLoaded             = false;
+    }
 }

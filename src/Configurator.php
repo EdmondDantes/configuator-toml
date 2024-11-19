@@ -6,6 +6,7 @@ namespace IfCastle\Configurator\Toml;
 
 use IfCastle\Application\Bootloader\BootloaderExecutorInterface;
 use IfCastle\Application\Bootloader\BootloaderInterface;
+use IfCastle\Application\Bootloader\BootManager\MainConfigAppenderInterface;
 use IfCastle\Application\Bootloader\Builder\ZeroContextInterface;
 use IfCastle\Application\Bootloader\Builder\ZeroContextRequiredInterface;
 use IfCastle\DI\ConfigInterface;
@@ -38,6 +39,7 @@ final class Configurator extends ConfigToml implements ZeroContextRequiredInterf
             ->bindObject([RepositoryReaderInterface::class, ServiceCollectionInterface::class],
                 new ServiceConfig($appDir), isThrow: false
             )
-            ->bindObject(ServiceCollectionWriterInterface::class, new ServiceConfigWriter($appDir), isThrow: false);
+            ->bindObject(ServiceCollectionWriterInterface::class, new ServiceConfigWriter($appDir), isThrow: false)
+            ->bindObject(MainConfigAppenderInterface::class, new ConfigMainAppender($appDir), isThrow: false);
     }
 }
