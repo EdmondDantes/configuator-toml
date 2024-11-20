@@ -27,7 +27,7 @@ final class ConfigMainAppender extends ConfigTomlMutable implements MainConfigAp
      * @throws \ErrorException
      */
     #[\Override]
-    public function appendSectionIfNotExists(string $section, array $data): void
+    public function appendSectionIfNotExists(string $section, array $data, string $comment = ''): void
     {
         $this->load();
 
@@ -50,7 +50,21 @@ final class ConfigMainAppender extends ConfigTomlMutable implements MainConfigAp
         $pointer                    = $data;
         unset($pointer);
 
-        $content                    = Toml::encode($config);
+        $content                    = [];
+
+        if ($comment !== '') {
+
+            $content[]              = ';' . \str_repeat('=', 49);
+
+            foreach (\explode("\n", $comment) as $line) {
+                $content[]          = '; ' . $line;
+            }
+
+            $content[]              = '';
+        }
+
+        $content                    = \implode(PHP_EOL, $content);
+        $content                    .= Toml::encode($config);
 
         Safe::execute(fn() => \file_put_contents($this->file, PHP_EOL . $content, \FILE_APPEND));
         $this->reset();

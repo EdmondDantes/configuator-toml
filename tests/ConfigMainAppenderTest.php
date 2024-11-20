@@ -25,11 +25,14 @@ class ConfigMainAppenderTest extends TestCase
         $config->appendSectionIfNotExists('main', [
             'foo' => 'bar',
             'baz' => 'qux',
-        ]);
+        ], "My comment\nMy comment 2");
 
         $this->assertFileExists(__DIR__ . '/main.toml');
         $expected                   = <<<TOML
             
+            ;=================================================
+            ; My comment
+            ; My comment 2
             [main]
             foo = "bar"
             baz = "qux"
