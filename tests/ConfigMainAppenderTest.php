@@ -33,6 +33,7 @@ class ConfigMainAppenderTest extends TestCase
             # ================================================
             # My comment
             # My comment 2
+            # ================================================
             [main]
             foo = "bar"
             baz = "qux"
