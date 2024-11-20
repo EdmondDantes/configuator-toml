@@ -54,10 +54,10 @@ final class ConfigMainAppender extends ConfigTomlMutable implements MainConfigAp
 
         if ($comment !== '') {
 
-            $content[]              = ';' . \str_repeat('=', 49);
+            $content[]              = '# ' . \str_repeat('=', 48);
 
             foreach (\explode("\n", $comment) as $line) {
-                $content[]          = '; ' . $line;
+                $content[]          = '# ' . $line;
             }
 
             $content[]              = '';

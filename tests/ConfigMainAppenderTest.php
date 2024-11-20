@@ -30,9 +30,9 @@ class ConfigMainAppenderTest extends TestCase
         $this->assertFileExists(__DIR__ . '/main.toml');
         $expected                   = <<<TOML
             
-            ;=================================================
-            ; My comment
-            ; My comment 2
+            # ================================================
+            # My comment
+            # My comment 2
             [main]
             foo = "bar"
             baz = "qux"
