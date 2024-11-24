@@ -25,11 +25,11 @@
         }
     },
     "require": {
-        "php": "^8.3",
-        "ifcastle/di": "^0.7",
+        "php": "^8.4",
+        "ifcastle/di": "^0.8",
         "ifcastle/os-utilities": "^0.5",
-        "ifcastle/service-manager": "^0.6",
-        "ifcastle/application": "^0.7",
+        "ifcastle/service-manager": "^0.7",
+        "ifcastle/application": "^0.8",
         "devium/toml": "^1.0"
     },
     "require-dev": {
